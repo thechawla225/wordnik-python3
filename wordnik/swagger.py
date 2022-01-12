@@ -161,6 +161,7 @@ class ApiClient:
                         value = unicode(value)
                     setattr(instance, attr, value)
                 elif (attrType == 'datetime'):
+                    ''' Fixed #4 error in this line'''
                     setattr(instance, attr, datetime.datetime.strptime(value[:-5],
                                               "%Y-%m-%dT%H:%M:%S"))
                 elif 'list[' in attrType:
